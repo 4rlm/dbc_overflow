@@ -1,0 +1,16 @@
+<!-- BEGIN: post-comment -->
+<div class="row post-comment">
+  
+  <% commentable_type = question_answer_obj.class.name %>
+  <form class="form-inline" action="/comments" method="post">
+    <input class="form-control" name="comment[body]" type="text" placeholder="Type a comment..." />
+
+    <input type="hidden" name="comment[user_id]" value="<%= @user.id %>" />
+    <input type="hidden" name="comment[commentable_type]" value="<%= commentable_type %>" />
+    <input type="hidden" name="comment[commentable_id]" value="<%= question_answer_obj.id %>" />
+
+    <button class="overflow-btn" name="commit" type="submit">Comment</button>
+  </form>
+
+</div> <!-- END: post-comment -->
+<hr>

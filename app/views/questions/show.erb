@@ -1,0 +1,27 @@
+<div class="container stack-div">
+
+  <div class="row question-header">
+
+    <div class="col-sm-10 post-header">
+      <h3 class="post-header"><a href="/questions/<%= @question.id %>"><%= @question.title.capitalize %></a></h3>
+    </div>
+
+    <div class="col-sm-2">
+      <a href="/questions/new" class="overflow-btn">Ask Question</a>
+    </div>
+
+  </div>
+
+
+  <div class="row stack-div">
+
+      <div class="col-sm-9 left-side">
+        <%= erb :'questions/_show_left', layout: true, locals: { question: @question }%>
+      </div>
+
+      <div class="col-sm-3 right-side">
+        <%= erb :'questions/_show_right', layout: true, locals: { question: @question }%>
+      </div>
+
+  </div>
+</div>

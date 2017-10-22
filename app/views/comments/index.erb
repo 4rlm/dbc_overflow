@@ -1,0 +1,28 @@
+<h3>View All Comment</h3>
+
+<table class="table table-bordered table-hover table-striped text-nowrap">
+  <tr>
+    <th class="w-small">ID</th>
+    <th>Body</th>
+    <th>User Id</th>
+    <th class="w-med">Updated</th>
+    <th colspan="3" class="w-med">Manage</th>
+  </tr>
+  <% @comments.each do |comment|%>
+  <tr>
+    <td class="w-small"><%= comment.id%></td>
+    <td><%= comment.body %></td>
+    <td><%= comment.user_id %></td>
+    <td><%= comment.updated_at.strftime('%x')%></td>
+
+    <td><a href="/comments/<%= comment.id %>"><span class="glyphicon glyphicon-folder-open"></span></a></td>
+    <td><a href="/comments/<%= comment.id %>/edit"><span class="glyphicon glyphicon-edit"></span></a></td>
+    <td><%= erb :'comments/_delete', layout: true, locals: { comment: comment }%></td>
+  </tr>
+  <% end %>
+</table>
+
+<div class="digg_pagination">
+  <%#= will_paginate @comments, renderer: BootstrapPagination::Sinatra %>
+  <%#= will_paginate @comments %>
+</div>

@@ -1,0 +1,25 @@
+<h3>View All Vote</h3>
+
+<table class="table table-bordered table-hover table-striped text-nowrap">
+  <tr>
+    <th class="w-small">ID</th>
+    <th>User Id</th>
+    <th class="w-med">Updated</th>
+    <th colspan="3" class="w-med">Manage</th>
+  </tr>
+  <% @votes.each do |vote|%>
+  <tr>
+    <td class="w-small"><%= vote.id%></td>
+    <td><%= vote.user_id %></td>
+    <td><%= vote.updated_at.strftime('%x')%></td>
+    <td><a href="/votes/<%= vote.id %>"><span class="glyphicon glyphicon-folder-open"></span></a></td>
+    <td><a href="/votes/<%= vote.id %>/edit"><span class="glyphicon glyphicon-edit"></span></a></td>
+    <td><%= erb :'votes/_delete', layout: true, locals: { vote: vote }%></td>
+  </tr>
+  <% end %>
+</table>
+
+<div class="digg_pagination">
+  <%#= will_paginate @votes, renderer: BootstrapPagination::Sinatra %>
+  <%#= will_paginate @votes %>
+</div>

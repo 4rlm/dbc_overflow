@@ -1,0 +1,24 @@
+<hr>
+<% if question_answer_obj.present? && question_answer_obj.comments.present? %>
+  <% comments = question_answer_obj.comments %>
+  <% comments.each do |comment| %>
+    <% grabbed_user = grab_user_data(comment.user_id) %>
+    <div class="row">
+      <div class="col-sm-7">
+        <p><%= comment.body.capitalize %></p>
+      </div>
+      <div class="col-sm-3">
+        <p><a href="/users/<%= grabbed_user.id %>"><%= grabbed_user.username.capitalize %> Commented </a></p>
+      </div>
+      <div class="col-sm-2">
+        <p>on <%= comment.updated_at.strftime('%x') %></p>
+      </div>
+    </div>
+    <hr>
+  <% end %>
+<% else %>
+  <div class="row">
+    <p>No Comments Yet</p>
+    <hr>
+  </div>
+<% end %>

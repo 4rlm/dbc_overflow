@@ -1,0 +1,38 @@
+<div class="question-stats stack-div text-left">
+  <table class="table">
+    <tr><td>asked: </td><td><%= @question.created_at.strftime('%x')%></td></tr>
+    <tr><td>viewed: </td><td><%= @question.view_count %> times</td></tr>
+    <tr><td>active: </td><td><%= @question.updated_at.strftime('%x')%></td></tr>
+  </table>
+</div>
+
+<div class="community-bulletin stack-div">
+  <div class="related text-left">
+    <h5>FEATURED ON META</h5>
+    <table class="table">
+      <tr><td>Bulletin/Link One</td></tr>
+      <tr><td>Bulletin/Link One</td></tr>
+      <tr><td>Bulletin/Link TWO</td></tr>
+      <tr><td>Bulletin/Link THREE</td></tr>
+    </table>
+    <h5>HOT META POSTS</h5>
+    <table class="table">
+      <tr><td>Bulletin/Link One</td></tr>
+      <tr><td>Bulletin/Link One</td></tr>
+      <tr><td>Bulletin/Link TWO</td></tr>
+      <tr><td>Bulletin/Link THREE</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="sidebar-related">
+  <div class="related-questions">
+    <h4>Related</h4>
+    <table class="table">
+      <tr><td>Item/Link One</td></tr>
+      <tr><td>Item/Link TWO</td></tr>
+      <tr><td>Item/Link THREE</td></tr>
+    </table>
+  </div>
+
+</div>

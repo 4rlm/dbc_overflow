@@ -1,0 +1,23 @@
+<div class="">
+
+  <div class="erb_header">
+    <h3>Comment Detail View</h3>
+  </div>
+
+  <table class="table table-bordered table-hover table-striped text-nowrap">
+    <tr>
+      <th class="w-small">ID</th>
+      <th class="w-small">Body</th>
+      <th class="w-small">User Id</th>
+      <th class="w-med">Updated</th>
+    </tr>
+
+    <tr>
+      <td><%= @comment.id %></td>
+      <td><%= @comment.body %></td>
+      <td><%= @comment.user_id %></td>
+      <td><%= @comment.updated_at.strftime('%x')%></td>
+    </tr>
+
+  </table>
+</div>

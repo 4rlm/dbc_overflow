@@ -1,0 +1,29 @@
+<div class="container">
+
+  <div class="row question-header">
+
+    <div class="col-sm-10 post-header text-left">
+      <h4>Top Questions</h4>
+    </div>
+
+    <div class="col-sm-2">
+      <a href="/questions/new" class="overflow-btn">Ask Question</a>
+    </div>
+
+  </div>
+
+
+  <div class="row">
+
+      <div class="col-sm-9 left-side">
+        <% if @questions %>
+          <%= erb :'_index_left', layout: true, locals: { questions: @questions } %>
+        <% end %>
+      </div>
+
+      <div class="col-sm-3 right-side">
+        <%= erb :'_index_right', layout: true %>
+      </div>
+
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="row answer stack-div">
+
+  <!-- VOTING PARTIAL -->
+  <%= erb :'questions/_show_vote', layout: true, locals: { answer: answer } %>
+
+  <div class="col-sm-10 postcell stack-div">
+    <div class="row post-text text-left">
+      <p><%= answer.body %></p> <!-- BEGIN: ANSWER BODY -->
+    </div>
+
+    <!-- BEGIN AUTHOR BUTTONS -->
+    <div class="row">
+      <% grabbed_user = grab_user_data(answer.user_id) %>
+
+      <div class="col-sm-5">
+      </div>
+
+      <div class="col-sm-3">
+        <p>Answered by <a href="/users/<%= grabbed_user.id %>"><b><%= grabbed_user.username.capitalize %></b></a></p>
+      </div>
+
+      <div class="col-sm-2">
+        <p>on <%= answer.updated_at.strftime('%x') %></p>
+      </div>
+
+      <div class="col-sm-1">
+        <p><a href="/answers/<%= answer.id %>/edit">Edit</a></p>
+      </div>
+
+      <div class="col-sm-1">
+        <%= erb :'answers/_delete', layout: true, locals: { answer: answer }%>
+      </div>
+    </div>
+    <!-- END AUTHOR BUTTONS -->
+
+    <%= erb :'questions/_show_comment', layout: true, locals: { question_answer_obj: answer }%>
+    <%= erb :'questions/_new_comment', layout: true, locals: { question_answer_obj: answer }%>
+
+
+  </div>
+</div> <!-- END: row answer -->

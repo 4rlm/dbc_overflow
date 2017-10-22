@@ -1,0 +1,16 @@
+<div class="">
+
+  <div class="erb_header">
+    <h3>Create New Vote</h3>
+  </div>
+
+  <form class="form-horizontal" action="/votes" method="post">
+
+    <!-- ## Form content moved to partial (_form_fields.erb) -->
+    <%= erb :'votes/_form_fields'%>
+
+    <button class="btn btn-success" name="commit" type="submit">Submit New Vote</button>
+  </form>
+
+</div>
+

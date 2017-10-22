@@ -1,0 +1,32 @@
+<div class="">
+
+  <div class="erb_header">
+    <h3>Create New Comment</h3>
+  </div>
+
+  <form class="form-horizontal" action="/comments" method="post">
+
+    <!-- ## Form content moved to partial (_form_fields.erb) -->
+    <%#= erb :'comments/_form_fields'%>
+
+    <div class="form-group">
+      <label for="body" class="col-sm-2 control-label">Body</label>
+      <div class="col-sm-10">
+        <input class="form-control post-text" id="body" name="comment[body]" type="text" placeholder="Body" />
+      </div>
+    </div>
+
+    <input type="hidden" name="comment[user_id]" value="<%= @user.id %>" />
+    <% if @question %>
+      <input type="hidden" name="comment[question_id]" value="<%= @question.id %>" />
+    <% end %>
+
+    <% if @answer %>
+      <input type="hidden" name="comment[answer_id]" value="<%= @answer.id %>" />
+    <% end %>
+
+
+    <button class="btn btn-success" name="commit" type="submit">Submit New Comment</button>
+  </form>
+
+</div>

@@ -1,0 +1,60 @@
+<hr>
+<div class="row">
+  <% @questions.each do |question| %>
+
+  <div class="row">
+    <div class="col-sm-3">
+
+      <div class="row">
+        <div class="col-sm-4">
+          <table>
+            <tr><td>0</td></tr>
+            <tr><td>Votes</td></tr>
+          </table>
+        </div>
+
+        <div class="col-sm-4">
+          <table>
+            <tr><td><%= question.answers.count %></td></tr>
+            <tr><td>Answers</td></tr>
+          </table>
+        </div>
+
+        <div class="col-sm-4">
+          <table>
+            <tr><td>0</td></tr>
+            <tr><td>Views</td></tr>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-sm-1">
+    </div>
+
+    <div class="col-sm-8">
+      <div class="row text-left">
+        <h4><a href="/questions/<%= question.id %>"><%= question.title.capitalize %></a></h4>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <table>
+            <tr><td><button>TAG 1</button> | <button>TAG 2</button> | <button>TAG 3</button> | <button>TAG 4</button></td></tr>
+          </table>
+        </div>
+
+        <div class="col-sm-6">
+          <p>Author: <%= question.user_id %> | Asked: <%= question.updated_at.strftime('%x') %></p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <hr>
+  <% end %>
+
+</div>

@@ -1,0 +1,25 @@
+<div class="">
+
+  <div class="erb_header">
+    <h3>Answer Detail View</h3>
+  </div>
+
+  <table class="table table-bordered table-hover table-striped text-nowrap">
+    <tr>
+      <th class="w-small">ID</th>
+      <th class="w-small">Body</th>
+      <th class="w-small">User Id</th>
+      <th class="w-small">Question Id</th>
+      <th class="w-med">Updated</th>
+    </tr>
+
+    <tr>
+      <td><%= @answer.id %></td>
+      <td><%= @answer.body %></td>
+      <td><%= @answer.user_id %></td>
+      <td><%= @answer.question_id %></td>
+      <td><%= @answer.updated_at.strftime('%x')%></td>
+    </tr>
+
+  </table>
+</div>

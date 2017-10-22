@@ -1,0 +1,33 @@
+<h3>View All Answer</h3>
+
+<table class="table table-bordered table-hover table-striped text-nowrap">
+  <tr>
+    <th class="w-small">ID</th>
+    <th>Body</th>
+    <th>User Id</th>
+    <th>Question Id</th>
+    <th class="w-med">Updated</th>
+    <th colspan="3" class="w-med">Manage</th>
+  </tr>
+  <% @answers.each do |answer|%>
+  <tr>
+    <td class="w-small"><%= answer.id%></td>
+    <td><%= answer.body %></td>
+    <td><%= answer.user_id %></td>
+    <td><%= answer.question_id %></td>
+    <td><%= answer.updated_at.strftime('%x')%></td>
+
+    <td><a href="/answers/<%= answer.id %>"><span class="glyphicon glyphicon-folder-open"></span></a></td>
+    <td><a href="/answers/<%= answer.id %>/edit"><span class="glyphicon glyphicon-edit"></span></a></td>
+
+    <td><%= erb :'answers/_delete', layout: true, locals: { answer: answer }%></td>
+
+  </tr>
+  <% end %>
+</table>
+
+
+<div class="digg_pagination">
+  <%#= will_paginate @answers, renderer: BootstrapPagination::Sinatra %>
+  <%#= will_paginate @answers %>
+</div>
